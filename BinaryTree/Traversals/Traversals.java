@@ -17,4 +17,20 @@ public class Traversals {
         preorderTraversalHelper(root, ans);
         return ans;
     }
+
+    private static void inorderTraversalHelper(TreeNode root, List<Integer> ans) {
+        if (root == null) {
+            return;
+        }
+
+        inorderTraversalHelper(root.left, ans);
+        ans.add(root.val);
+        inorderTraversalHelper(root.right, ans);
+    }
+
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        inorderTraversalHelper(root, ans);
+        return ans;
+    }
 }
