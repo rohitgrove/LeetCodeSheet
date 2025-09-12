@@ -33,4 +33,20 @@ public class Traversals {
         inorderTraversalHelper(root, ans);
         return ans;
     }
+
+    private static void postorderTraversalHelper(TreeNode root, List<Integer> ans) {
+        if (root == null) {
+            return;
+        }
+
+        postorderTraversalHelper(root.left, ans);
+        ans.add(root.val);
+        postorderTraversalHelper(root.right, ans);
+    }
+
+    public static List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        postorderTraversalHelper(root, ans);
+        return ans;
+    }
 }
