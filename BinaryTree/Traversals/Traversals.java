@@ -40,8 +40,8 @@ public class Traversals {
         }
 
         postorderTraversalHelper(root.left, ans);
-        ans.add(root.val);
         postorderTraversalHelper(root.right, ans);
+        ans.add(root.val);
     }
 
     public static List<Integer> postorderTraversal(TreeNode root) {
