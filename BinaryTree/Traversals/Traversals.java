@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Traversals {
     private static void preorderTraversalHelper(TreeNode root, List<Integer> ans) {
@@ -48,5 +50,35 @@ public class Traversals {
         List<Integer> ans = new ArrayList<>();
         postorderTraversalHelper(root, ans);
         return ans;
+    }
+
+    public static void bfs(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        q.offer(null);
+
+        while (!q.isEmpty()) {
+            TreeNode node = q.poll();
+            if (node == null) {
+                System.out.println();
+                if (!q.isEmpty()) {
+                    q.offer(null);
+                }
+            } else {
+                System.out.print(node.val + " ");
+                if (node.left != null) {
+                    q.offer(node.left);
+                }
+                if (node.right != null) {
+                    q.offer(node.right);
+                }
+            }
+        }
+
+        System.out.println();
     }
 }
