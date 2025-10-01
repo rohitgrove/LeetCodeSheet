@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class Traversals {
     public static void preOrderTraversal(TreeNode root) {
         if (root == null) {
             return;
