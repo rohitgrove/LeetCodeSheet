@@ -1,5 +1,9 @@
 public class ConstructTree {
-    public int idx = 0;
+    private int idx;
+
+    public ConstructTree() {
+        this.idx = 0;
+    }
 
     public TreeNode createTree(int data[]) {
         if (data[idx] == -1) {
@@ -13,5 +17,9 @@ public class ConstructTree {
         root.right = createTree(data);
 
         return root;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
     }
 }
