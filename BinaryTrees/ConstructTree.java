@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ConstructTree {
-    private int idx = 0;
+    public int idx = 0;
 
     public TreeNode createTree(int data[]) {
         if (data[idx] == -1) {
