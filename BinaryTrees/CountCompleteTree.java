@@ -23,7 +23,7 @@ public class CountCompleteTree {
         ConstructTree ct = new ConstructTree();
         int data[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, 6, -1, -1, -1 };
         TreeNode root = ct.createTree(data);
-        ct.levelOrderTraversal(root);
+        Traversals.levelOrderTraversal(root);
         System.out.println(countNodes(root));
     }
 }
