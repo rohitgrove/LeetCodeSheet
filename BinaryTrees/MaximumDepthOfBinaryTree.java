@@ -13,7 +13,7 @@ public class MaximumDepthOfBinaryTree {
         ConstructTree ct = new ConstructTree();
         int data[] = { 3, 9, -1, -1, 20, 15, -1, -1, 7, -1, -1 };
         TreeNode root = ct.createTree(data);
-        ct.levelOrderTraversal(root);
+        Traversals.levelOrderTraversal(root);
 
         System.out.println("Height Of Tree: " + maxDepth(root));
     }
