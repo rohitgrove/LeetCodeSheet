@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class ConstructBTfromPreorderAndInorderTaversal {
     public static int findPositionInInOrder(int[] inorder, int element, int size) {
         for (int i = 0; i < size; i++) {
@@ -9,8 +11,14 @@ public class ConstructBTfromPreorderAndInorderTaversal {
         return -1;
     }
 
+    public static void inOrderMappingToIndex(HashMap<Integer, Integer> indexMap, int inOrder[]) {
+        for (int i = 0; i < inOrder.length; i++) {
+            indexMap.put(inOrder[i], i);
+        }
+    }
+
     public static TreeNode constructTreeFromPreOrderAndPostOrder(int preorder[], int inorder[], int preIndex[],
-            int inStart, int inEnd, int size) {
+            int inStart, int inEnd, int size, HashMap<Integer, Integer> indexMap) {
         if (preIndex[0] >= size || inStart > inEnd) {
             return null;
         }
@@ -18,10 +26,10 @@ public class ConstructBTfromPreorderAndInorderTaversal {
         int element = preorder[preIndex[0]];
         preIndex[0]++;
         TreeNode root = new TreeNode(element);
-        int position = findPositionInInOrder(inorder, element, size);
+        int position = indexMap.get(element);
 
-        root.left = constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, inStart, position - 1, size);
-        root.right = constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, position + 1, inEnd, size);
+        root.left = constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, inStart, position - 1, size, indexMap);
+        root.right = constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, position + 1, inEnd, size, indexMap);
         return root;
     }
 
@@ -30,7 +38,9 @@ public class ConstructBTfromPreorderAndInorderTaversal {
         int inorderStart = 0;
         int inorderEnd = inorder.length - 1;
         int size = preorder.length;
-        return constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, inorderStart, inorderEnd, size);
+        HashMap<Integer, Integer> indexMap = new HashMap<>();
+        inOrderMappingToIndex(indexMap, inorder);
+        return constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, inorderStart, inorderEnd, size, indexMap);
     }
 
     public static void main(String[] args) {
