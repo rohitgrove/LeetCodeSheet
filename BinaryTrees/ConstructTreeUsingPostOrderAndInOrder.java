@@ -28,14 +28,14 @@ public class ConstructTreeUsingPostOrderAndInOrder {
         return root;
     }
 
-    public static TreeNode buildTree(int[] postOrder, int[] inorder) {
-        int size = postOrder.length;
+    public static TreeNode buildTree(int[] inorder, int[] postorder) {
+        int size = postorder.length;
         int[] postIndex = { size - 1 };
         int inorderStart = 0;
         int inorderEnd = size - 1;
         HashMap<Integer, Integer> valueToIndexMap = new HashMap<>();
         createMapping(inorder, size, valueToIndexMap);
-        return constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inorder, postIndex,
+        return constructTreeFromPostAndInorderTraversal(valueToIndexMap, postorder, inorder, postIndex,
                 inorderStart, inorderEnd, size);
     }
 
