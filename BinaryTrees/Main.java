@@ -9,16 +9,16 @@ public class Main {
         System.out.println(root.data);
         System.out.println();
         System.out.println("PreOrder: ");
-        ct.preOrderTraversal(root);
+        Traversals.preOrderTraversal(root);
         System.out.println();
         System.out.println("Inorder: ");
-        ct.inOrderTraversal(root);
+        Traversals.inOrderTraversal(root);
         System.out.println();
         System.out.println("PostOrder: ");
-        ct.postOrderTraversal(root);
+        Traversals.postOrderTraversal(root);
         System.out.println();
         System.out.println("LevelOrder: ");
-        ct.levelOrderTraversal(root);
+        Traversals.levelOrderTraversal(root);
         System.out.println();
     }
 }
