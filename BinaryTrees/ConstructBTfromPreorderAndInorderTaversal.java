@@ -17,7 +17,7 @@ public class ConstructBTfromPreorderAndInorderTaversal {
         }
     }
 
-    public static TreeNode constructTreeFromPreOrderAndPostOrder(int preorder[], int inorder[], int preIndex[],
+    public static TreeNode constructTreeFromPreOrderAndInOrder(int preorder[], int inorder[], int preIndex[],
             int inStart, int inEnd, int size, HashMap<Integer, Integer> indexMap) {
         if (preIndex[0] >= size || inStart > inEnd) {
             return null;
@@ -28,8 +28,8 @@ public class ConstructBTfromPreorderAndInorderTaversal {
         TreeNode root = new TreeNode(element);
         int position = indexMap.get(element);
 
-        root.left = constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, inStart, position - 1, size, indexMap);
-        root.right = constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, position + 1, inEnd, size, indexMap);
+        root.left = constructTreeFromPreOrderAndInOrder(preorder, inorder, preIndex, inStart, position - 1, size, indexMap);
+        root.right = constructTreeFromPreOrderAndInOrder(preorder, inorder, preIndex, position + 1, inEnd, size, indexMap);
         return root;
     }
 
@@ -40,7 +40,7 @@ public class ConstructBTfromPreorderAndInorderTaversal {
         int size = preorder.length;
         HashMap<Integer, Integer> indexMap = new HashMap<>();
         inOrderMappingToIndex(indexMap, inorder);
-        return constructTreeFromPreOrderAndPostOrder(preorder, inorder, preIndex, inorderStart, inorderEnd, size, indexMap);
+        return constructTreeFromPreOrderAndInOrder(preorder, inorder, preIndex, inorderStart, inorderEnd, size, indexMap);
     }
 
     public static void main(String[] args) {
