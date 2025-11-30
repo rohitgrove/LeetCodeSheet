@@ -62,15 +62,15 @@ public class RemoveHalfNodes {
         ConstructTree ct = new ConstructTree();
         int data1[] = { 5, 7, 2, -1, -1, -1, 8, -1, -1 };
         TreeNode root1 = ct.createTree(data1);
-        ct.inOrderTraversal(root1);
+        Traversals.inOrderTraversal(root1);
         removeHalfNodes(root1);
         System.out.println();
-        ct.inOrderTraversal(removeHalfNodes(root1));
+        Traversals.inOrderTraversal(removeHalfNodes(root1));
         ct.idx = 0;
         int data2[] = { 2, 7, -1, -1, 5, -1, -1 };
         TreeNode root2 = ct.createTree(data2);
         System.out.println();
         removeHalfNodes(root2);
-        ct.inOrderTraversal(removeHalfNodes(root2));
+        Traversals.inOrderTraversal(removeHalfNodes(root2));
     }
 }
