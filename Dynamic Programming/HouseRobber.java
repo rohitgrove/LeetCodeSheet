@@ -1,4 +1,3 @@
-
 public class HouseRobber {
     public static int solveUsingRec(int nums[], int idx) {
         if (idx >= nums.length) {
