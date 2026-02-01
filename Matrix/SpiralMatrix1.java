@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpiralMatrix {
+public class SpiralMatrix1 {
     public static List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
         int totalElements = matrix.length * matrix[0].length;
