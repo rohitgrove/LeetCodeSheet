@@ -18,7 +18,7 @@ public class MinimumKToResuceArrayWithinLimitQ2 {
         }
 
         int left = 1;
-        int right = Math.max(max, nums.length); // 🔥 FIX
+        int right = Math.max(max, nums.length);
         int ans = right;
 
         while (left <= right) {
