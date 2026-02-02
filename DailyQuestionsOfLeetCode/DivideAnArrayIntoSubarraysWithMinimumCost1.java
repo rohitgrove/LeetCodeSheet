@@ -6,8 +6,9 @@ public class DivideAnArrayIntoSubarraysWithMinimumCost1 {
             if (nums[i] < a) {
                 b = a;
                 a = nums[i];
-            } else if (nums[i] < b)
+            } else if (nums[i] < b) {
                 b = nums[i];
+            }
         }
 
         return nums[0] + a + b;
