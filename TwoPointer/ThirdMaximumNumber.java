@@ -26,7 +26,6 @@ public class ThirdMaximumNumber {
 
         // agar 3 distinct elements nahi mile
         return thirdMax == Long.MIN_VALUE ? (int) firstMax : (int) thirdMax;
-    
     }
 
     public static void main(String[] args) {
