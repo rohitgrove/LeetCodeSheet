@@ -4,9 +4,9 @@ public class MinimumDeletionsToMakeStringBalanced {
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c == 'b')
+            if (c == 'b') {
                 b++;
-            else if (b > 0) {
+            } else if (b > 0) {
                 res++;
                 b--;
             }
