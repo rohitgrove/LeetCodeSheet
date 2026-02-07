@@ -14,7 +14,7 @@ public class MinimumDeletionsToMakeStringBalanced {
 
         return res;
     }
-    
+
     public static void main(String[] args) {
         System.out.println(minimumDeletions("aababbab"));
         System.out.println(minimumDeletions("bbaaaaabb"));
