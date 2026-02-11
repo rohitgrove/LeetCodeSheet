@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class LongestBalancedSubaaray1 {
+public class LongestBalancedSubarray1 {
     public static int longestBalanced(int[] nums) {
         int result = 0;
 
