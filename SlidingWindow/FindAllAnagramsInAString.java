@@ -24,7 +24,7 @@ public class FindAllAnagramsInAString {
     public static List<Integer> findAnagrams(String s, String p) {
         int start = 0;
         int end = p.length();
-        System.out.println();
+
         List<Integer> ans = new ArrayList<>();
         while (end <= s.length()) {
             if (isAnagram(s.substring(start, end), p)) {
