@@ -8,8 +8,6 @@ public class CheckIfAStringContainsAllBinaryCodesOfSizeK {
             st.add(s.substring(i, i + k));
         }
 
-        System.out.println(st);
-
         return st.size() == (int) Math.pow(2, k);
     }
 
