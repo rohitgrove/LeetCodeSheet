@@ -1,4 +1,3 @@
-
 public class KnapSack01 {
     public static int solveUsingRec(int capacity, int val[], int wt[], int index, int n) {
         if (index == n - 1) {
