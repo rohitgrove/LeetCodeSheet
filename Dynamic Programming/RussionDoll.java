@@ -16,20 +16,16 @@ class Compare implements Comparator<int[]> {
 public class RussionDoll {
     public static int solveUsingBS(int env[][]) {
         ArrayList<Integer> ans = new ArrayList<>();
-        // initial state
         ans.add(env[0][1]);
         for (int i = 1; i < env.length; i++) {
             if (env[i][1] > ans.getLast()) {
                 ans.add(env[i][1]);
             } else {
-                // just bada number exist karta hai
                 int index = Collections.binarySearch(ans, env[i][1]);
-                // if index not found
                 if (index < 0) {
                     index = Math.abs(index) - 1;
                 }
 
-                // replace
                 ans.set(index, env[i][1]);
             }
         }
