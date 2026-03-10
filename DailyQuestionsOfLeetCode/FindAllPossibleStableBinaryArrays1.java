@@ -1,4 +1,4 @@
-public class FindAllPossibleStableBinaryArrays {
+public class FindAllPossibleStableBinaryArrays1 {
     static int MOD = 1000000007;
 
     public static int solveUsingRec(int zero, int one, int prev, int cnt, int limit) {
