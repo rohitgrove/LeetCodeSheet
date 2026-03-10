@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class Graph {
-    HashMap<Integer, List<Integer>> adjList = new HashMap<>();
-
-    public void addEdge(int u, int v, boolean direction) {
+    public void addEdge(int u, int v, boolean direction, HashMap<Integer, List<Integer>> adjList) {
         adjList.putIfAbsent(u, new ArrayList<>());
 
         if (direction) {
@@ -19,7 +17,7 @@ public class Graph {
         }
     }
 
-    public void printAdjList() {
+    public void printAdjList(HashMap<Integer, List<Integer>> adjList) {
         for (int src : adjList.keySet()) {
             System.out.print(src + "{ ");
             for (int nbr : adjList.get(src)) {
@@ -29,7 +27,7 @@ public class Graph {
         }
     }
 
-    private void bfsUtil(int src, HashMap<Integer, Boolean> vis) {
+    private void bfsUtil(int src, HashMap<Integer, Boolean> vis, HashMap<Integer, List<Integer>> adjList) {
         Queue<Integer> q = new LinkedList<>();
 
         q.offer(src);
@@ -51,33 +49,33 @@ public class Graph {
         }
     }
 
-    public void bfs(int start, int end) {
+    public void bfs(int start, int end, HashMap<Integer, List<Integer>> adjList) {
         HashMap<Integer, Boolean> vis = new HashMap<>();
         for (int src = start; src <= end; src++) {
             if (!vis.containsKey(src)) {
-                bfsUtil(src, vis);
+                bfsUtil(src, vis, adjList);
             }
         }
     }
 
-    private void dfsUtil(int src, HashMap<Integer, Boolean> vis) {
+    private void dfsUtil(int src, HashMap<Integer, Boolean> vis, HashMap<Integer, List<Integer>> adjList) {
         vis.put(src, true);
         System.out.print(src + " ");
 
         if (adjList.containsKey(src)) {
             for (int nbr : adjList.get(src)) {
                 if (!vis.containsKey(nbr)) {
-                    dfsUtil(nbr, vis);
+                    dfsUtil(nbr, vis, adjList);
                 }
             }
         }
     }
 
-    public void dfs(int start, int end) {
+    public void dfs(int start, int end, HashMap<Integer, List<Integer>> adjList) {
         HashMap<Integer, Boolean> vis = new HashMap<>();
         for (int src = start; src <= end; src++) {
             if (!vis.containsKey(src)) {
-                dfsUtil(src, vis);
+                dfsUtil(src, vis, adjList);
             }
         }
     }
