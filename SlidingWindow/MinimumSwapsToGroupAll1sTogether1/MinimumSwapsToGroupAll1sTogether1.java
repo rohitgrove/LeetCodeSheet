@@ -1,4 +1,4 @@
-public class MinimumSwapsToGroupAll1sTogether {
+public class MinimumSwapsToGroupAll1sTogether1 {
     public static int bruteForce(int nums[]) {
         int n = nums.length;
         int k = 0;
@@ -33,18 +33,21 @@ public class MinimumSwapsToGroupAll1sTogether {
         int ones = 0;
 
         for (int x : arr) {
-            if (x == 1)
+            if (x == 1) {
                 ones++;
+            }
         }
 
-        if (ones == 0)
+        if (ones == 0) {
             return -1;
+        }
 
         int windowOnes = 0;
 
         for (int i = 0; i < ones; i++) {
-            if (arr[i] == 1)
+            if (arr[i] == 1) {
                 windowOnes++;
+            }
         }
 
         int maxOnes = windowOnes;
