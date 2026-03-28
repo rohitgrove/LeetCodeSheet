@@ -54,7 +54,6 @@ public class MinimumSwapsToGroupAll1sTogether1 {
 
         for (int i = ones; i < arr.length; i++) {
             if (arr[i] == 1) {
-
                 windowOnes++;
             }
             if (arr[i - ones] == 1) {
