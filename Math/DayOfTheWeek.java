@@ -31,6 +31,22 @@ public class DayOfTheWeek {
         return days[(totalDays + 4) % 7];
     }
 
+    public static String dayOfTheWeekOptimized(int day, int month, int year) {
+        if (month < 3) {
+            month += 12;
+            year -= 1;
+        }
+
+        int K = year % 100;
+        int J = year / 100;
+
+        int h = (day + (13 * (month + 1)) / 5 + K + (K / 4) + (J / 4) + 5 * J) % 7;
+
+        String days[] = { "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+
+        return days[h];
+    }
+
     public static void main(String[] args) {
         System.out.println(dayOfTheWeek(31, 8, 2019));
         System.out.println(dayOfTheWeek(18, 7, 1999));
