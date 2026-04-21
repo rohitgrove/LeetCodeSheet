@@ -1,4 +1,4 @@
-public class PrintNNumbers {
+public class PrintOneToNNumbers {
     public static void printNumbers(int current, int N) {
         if (current > N) {
             return;
