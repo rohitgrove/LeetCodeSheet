@@ -19,6 +19,34 @@ public class RecursiveBubbleSort {
         bubbleSort(arr, n - 1);
     }
 
+    public static void bubbleSortOpti(int[] arr, int n) {
+        // Base case
+        if (n == 1) {
+            return;
+        }
+
+        boolean didSwap = false; // Track if any swap occurred
+
+        // Perform one pass of bubble sort
+        for (int j = 0; j <= n - 2; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j + 1]
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                didSwap = true;
+            }
+        }
+
+        // If no swaps were made, the array is already sorted
+        if (!didSwap) {
+            return;
+        }
+
+        // Recur for remaining elements
+        bubbleSortOpti(arr, n - 1);
+    }
+
     public static void printArr(int[] arr) {
         for (int i : arr) {
             System.out.print(i + " ");
