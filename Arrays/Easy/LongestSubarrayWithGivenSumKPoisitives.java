@@ -35,8 +35,8 @@ public class LongestSubarrayWithGivenSumKPoisitives {
                 maxLength = Math.max(maxLength, right - left + 1);
             }
 
-            right++;
             sum += nums[right];
+            right++;
         }
 
         return maxLength;
