@@ -43,6 +43,25 @@ public class RearrangeArrayElementsBySign {
         return ans;
     }
 
+
+    // This approach works when saare pos elements and negetive elements inme se 1 saath nahi ho sakte matlab [-1, -3, 4, 5] aise na ho par aise chal jayenge [-1, 2, -3, 4]
+    public int[] optimizeApproach2(int[] nums) {
+        int n = nums.length;
+        int pos = 0, neg = 1;
+        while (pos < n && neg < n) {
+            if (nums[pos] >= 0) {
+                pos += 2;
+            } else if (nums[neg] < 0) {
+                neg += 2;
+            } else {
+                int temp = nums[pos];
+                nums[pos] = nums[neg];
+                nums[neg] = temp;
+            }
+        }
+        return nums;
+    }
+
     public static int[] rearrangeArray(int[] nums) {
         return optimizeApproach(nums);
     }
