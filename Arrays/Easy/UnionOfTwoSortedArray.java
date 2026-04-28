@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.TreeSet;
 
 public class UnionOfTwoSortedArray {
     public static ArrayList<Integer> bruteForce(int a[], int b[]) {
-        HashSet<Integer> set = new HashSet<>();
+        TreeSet<Integer> set = new TreeSet<>();
 
         for (int i = 0; i < a.length; i++) {
             set.add(a[i]);
@@ -15,7 +14,6 @@ public class UnionOfTwoSortedArray {
         }
 
         ArrayList<Integer> ans = new ArrayList<>(set);
-        Collections.sort(ans);
         return ans;
     }
 
@@ -68,7 +66,7 @@ public class UnionOfTwoSortedArray {
     }
 
     public static ArrayList<Integer> findUnion(int a[], int b[]) {
-        return optimizedApproach(a, b);
+        return bruteForce(a, b);
     }
 
     public static void main(String[] args) {
