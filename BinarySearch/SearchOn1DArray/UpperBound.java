@@ -1,17 +1,18 @@
 public class UpperBound {
     public static int upperBound(int[] arr, int target) {
-        int start = 0, end = arr.length - 1;
+        int start = 0;
+        int end = arr.length - 1;
         int ans = arr.length;
+        int mid = start + (end - start) / 2;
 
         while (start <= end) {
-            int mid = start + (end - start) / 2;
-
             if (arr[mid] > target) {
                 ans = mid;
-                end = mid - 1; // left search
+                end = mid - 1;
             } else {
-                start = mid + 1; // right search
+                start = mid + 1;
             }
+            mid = start + (end - start) / 2;
         }
 
         return ans;
