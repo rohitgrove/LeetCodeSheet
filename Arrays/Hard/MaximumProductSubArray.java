@@ -6,7 +6,6 @@ public class MaximumProductSubArray {
 
         int i = 0;
         while (i < nums.length) {
-
             rightProd *= nums[i];
             leftProd *= nums[nums.length - 1 - i];
 
