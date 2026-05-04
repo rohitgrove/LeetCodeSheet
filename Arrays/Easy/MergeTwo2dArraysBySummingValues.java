@@ -145,13 +145,13 @@ public class MergeTwo2dArraysBySummingValues {
                 nums2[][] = { { 1, 4 },
                         { 3, 2 },
                         { 4, 1 } };
-        printArr(mergeArrays(nums1, nums2));
+        printArr(mergeArrays1(nums1, nums2));
 
         int nums3[][] = { { 2, 4 },
                 { 3, 6 },
                 { 5, 5 } },
                 nums4[][] = { { 1, 3 },
                         { 4, 3 } };
-        printArr(mergeArrays(nums3, nums4));
+        printArr(mergeArrays1(nums3, nums4));
     }
 }
