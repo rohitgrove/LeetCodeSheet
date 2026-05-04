@@ -80,7 +80,6 @@ public class MergeTwo2dArraysBySummingValues {
                         { 3, 2 },
                         { 4, 1 } };
         printArr(mergeArrays(nums1, nums2));
-        // mergeArrays(nums1, nums2);
 
         int nums3[][] = { { 2, 4 },
                 { 3, 6 },
