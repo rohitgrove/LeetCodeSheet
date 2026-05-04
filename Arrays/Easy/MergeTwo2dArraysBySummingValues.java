@@ -30,20 +30,18 @@ public class MergeTwo2dArraysBySummingValues {
                 res[k][1] = val1 + val2;
                 i++;
                 j++;
-                k++;
             } else {
                 if (id1 < id2) {
                     res[k][0] = id1;
                     res[k][1] = val1;
-                    k++;
                     i++;
                 } else {
                     res[k][0] = id2;
                     res[k][1] = val2;
-                    k++;
                     j++;
                 }
             }
+            k++;
         }
 
         while (i < nums1.length) {
