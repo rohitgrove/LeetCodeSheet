@@ -1,17 +1,17 @@
 public class SplitArrayLargestSum {
-    public static boolean isPossible(int[] arr, int mid, int k) {
+    public static boolean isPossible(int[] nums, int mid, int k) {
         int subArray = 1;
         int sizeOfSubArray = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (sizeOfSubArray + arr[i] <= mid) {
-                sizeOfSubArray += arr[i];
+        for (int i = 0; i < nums.length; i++) {
+            if (sizeOfSubArray + nums[i] <= mid) {
+                sizeOfSubArray += nums[i];
             } else {
                 subArray++;
-                if (subArray > k || arr[i] > mid) {
+                if (subArray > k || nums[i] > mid) {
                     return false;
                 }
                 sizeOfSubArray = 0;
-                sizeOfSubArray += arr[i];
+                sizeOfSubArray += nums[i];
             }
         }
 
