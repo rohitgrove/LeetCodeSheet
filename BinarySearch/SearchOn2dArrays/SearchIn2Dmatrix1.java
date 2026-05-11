@@ -1,4 +1,4 @@
-public class SearchIn2Dmatrix {
+public class SearchIn2Dmatrix1 {
     public static boolean searchMatrix(int[][] matrix, int target) {
         int row = matrix.length;
         int col = matrix[0].length;
