@@ -29,7 +29,6 @@ public class CountAndSay {
         return sb.toString();
     }
 
-
     public static void main(String[] args) {
         System.out.println(countAndSayRec(4));
         System.out.println(countAndSayRec(1));
