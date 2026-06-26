@@ -5,8 +5,8 @@ import java.util.List;
 public class NQueens {
     public static void storeAnswer(char[][] board, List<List<String>> ans) {
         List<String> currAns = new ArrayList<>();
-        for (int i = 0; i < board.length; i++) {
-            currAns.add(String.valueOf(board[i]));
+        for (char[] row : board) {
+            currAns.add(String.valueOf(row));
         }
         ans.add(currAns);
     }
