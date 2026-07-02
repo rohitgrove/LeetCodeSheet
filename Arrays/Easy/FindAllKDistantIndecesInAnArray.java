@@ -29,6 +29,35 @@ public class FindAllKDistantIndecesInAnArray {
         return ans;
     }
 
+    public static List<Integer> findKDistantIndicesOptimize(int[] nums, int key, int k) {
+        List<Integer> keyIndices = new ArrayList<>();
+
+        // Store all indices where nums[i] == key
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == key) {
+                keyIndices.add(i);
+            }
+        }
+
+        List<Integer> ans = new ArrayList<>();
+
+        int p = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            // Move pointer to the closer key index
+            while (p + 1 < keyIndices.size() &&
+                    Math.abs(i - keyIndices.get(p + 1)) <= Math.abs(i - keyIndices.get(p))) {
+                p++;
+            }
+
+            if (Math.abs(i - keyIndices.get(p)) <= k) {
+                ans.add(i);
+            }
+        }
+
+        return ans;
+    }
+
     public static void main(String[] args) {
         int nums1[] = { 3, 4, 9, 1, 3, 9, 5 };
         System.out.println(findKDistantIndices(nums1, 9, 1));
