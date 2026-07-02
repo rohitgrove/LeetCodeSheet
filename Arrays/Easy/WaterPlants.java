@@ -3,26 +3,25 @@ public class WaterPlants {
         int start = 0;
         int end = plants.length - 1;
 
+        int cntRefil = 0;
+
         int capA = capacityA;
         int capB = capacityB;
 
-        int refill = 0;
-
         while (start < end) {
             // Alice
-            if (capA >= plants[start]) {
+            if (plants[start] <= capA) {
                 capA -= plants[start];
             } else {
-                refill++;
+                cntRefil++;
                 capA = capacityA - plants[start];
             }
             start++;
-
             // Bob
-            if (capB >= plants[end]) {
+            if (plants[end] <= capB) {
                 capB -= plants[end];
             } else {
-                refill++;
+                cntRefil++;
                 capB = capacityB - plants[end];
             }
             end--;
@@ -32,17 +31,15 @@ public class WaterPlants {
         if (start == end) {
             if (capA >= capB) {
                 if (capA < plants[start]) {
-                    refill++;
+                    cntRefil++;
                 }
-
             } else {
                 if (capB < plants[start]) {
-                    refill++;
+                    cntRefil++;
                 }
             }
         }
-
-        return refill;
+        return cntRefil;
     }
 
     public static void main(String[] args) {
