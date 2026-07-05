@@ -1,3 +1,4 @@
+
 public class LinkedList {
     public Node head;
     public Node tail;
@@ -59,22 +60,48 @@ public class LinkedList {
         tail = temp;
     }
 
-    public void deleteAtMiddleByIndex(int pos) {
-        if (pos == 1) {
-            deleteAtHead();
-            return;
-        } else if (pos == size()) {
-            deleteAtTail();
-            return;
+    public int deleteAtMiddle(int position) {
+        if (head == null) {
+            throw new RuntimeException("Linked list is empty");
         }
 
-        Node prev = head;
-        while (pos != 2) {
-            prev = prev.next;
-            pos--;
+        int size = size();
+
+        if (position < 1 || position > size) {
+            throw new RuntimeException("Invalid Index. Please Insert valid Index");
         }
 
-        prev.next = prev.next.next;
+        if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+
+        if (position == 1) {
+            int val = head.data;
+            head = head.next;
+            return val;
+        } else if (position == size) {
+            Node prev = head;
+            while (prev.next != tail) {
+                prev = prev.next;
+            }
+            int val = tail.data;
+            prev.next = null;
+            tail = prev;
+            return val;
+        } else {
+            Node prev = head;
+            while (position != 2) {
+                prev = prev.next;
+                position--;
+            }
+
+            int val = prev.next.data;
+
+            prev.next = prev.next.next;
+            return val;
+        }
     }
 
     public int size() {
