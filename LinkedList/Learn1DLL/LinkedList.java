@@ -1,4 +1,3 @@
-
 public class LinkedList {
     public Node head;
     public Node tail;
@@ -37,6 +36,58 @@ public class LinkedList {
 
         tail.next = newNode;
         tail = newNode;
+    }
+
+    public void insertAtPosition(int position, int data) {
+        int size = size();
+
+        if (position < 1 || position > (size + 1)) {
+            throw new RuntimeException("Invalid Index. Please Insert valid Index");
+        }
+
+        if (position == 1) {
+            insertAtHead(data);
+        } else if (position == (size + 1)) {
+            insertAtTail(data);
+        } else {
+            Node newNode = new Node(data);
+            Node prev = head;
+            Node curr = head;
+
+            while (position != 1) {
+                prev = curr;
+                curr = curr.next;
+                position--;
+            }
+
+            prev.next = newNode;
+            newNode.next = curr;
+        }
+    }
+
+    public void insertAtPosition2(int position, int data) {
+        int size = size();
+
+        if (position < 1 || position > (size + 1)) {
+            throw new RuntimeException("Invalid Index. Please Insert valid Index");
+        }
+
+        if (position == 1) {
+            insertAtHead(data);
+        } else if (position == (size + 1)) {
+            insertAtTail(data);
+        } else {
+            Node newNode = new Node(data);
+            Node curr = head;
+
+            while (position != 2) {
+                curr = curr.next;
+                position--;
+            }
+
+            newNode.next = curr.next;
+            curr.next = newNode;
+        }
     }
 
     public void deleteAtTail() {

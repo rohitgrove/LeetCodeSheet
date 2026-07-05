@@ -1,28 +1,44 @@
 public class Main {
     public static void main(String[] args) {
-        // LinkedList ll = new LinkedList();
-        // ll.insertAtHead(5);
-        // ll.insertAtHead(4);
-        // ll.insertAtHead(3);
-        // ll.insertAtHead(2);
-        // ll.insertAtHead(1);
-        // System.out.println(ll.size());
-        // ll.deleteAtHead();
-        // System.out.println(ll.size());
-        // ll.insertAtTail(1);
-        // System.out.println(ll.size());
-        // ll.deleteAtTail();
-        // System.out.println(ll.size());
-        // ll.printLL();
         LinkedList ll = new LinkedList();
-        ll.insertAtHead(50);
-        ll.insertAtHead(40);
-        ll.insertAtHead(30);
-        ll.insertAtHead(20);
-        ll.insertAtHead(10);
-        System.out.println(ll.searchByValue(45));
-        System.out.println(ll.deleteAtMiddle(3));
+        ll.insertAtTail(10);
+        ll.insertAtTail(20);
+        ll.insertAtTail(30);
+        ll.insertAtTail(50);
         ll.printLL();
-    
+
+        ll.insertAtPosition(3, 1);
+        ll.insertAtPosition2(4, 3);
+        ll.printLL();
+
+        // creation of node
+        // Node first = new Node(10);
+        // Node second = new Node(20);
+        // Node third = new Node(30);
+        // Node fourth = new Node(40);
+        // Node fifth = new Node(50);
+        // first.next = second;
+        // second.next = third;
+        // third.next = fourth;
+        // fourth.next = fifth;
+        // // linked list create ho chuki hai
+        // System.out.println("Printing the entire LL: ");
+        // LinkedList ll = new LinkedList();
+        // ll.head = first;
+        // ll.tail = fifth;
+        // ll.printLL();
+
+        // ll.insertAtTail(500);
+
+        // ll.printLL();
+
+        // ll.insertAtHead(50);
+        // ll.insertAtHead(40);
+        // ll.insertAtHead(30);
+        // ll.insertAtHead(20);
+        // ll.insertAtHead(10);
+        // ll.printLL();
+        // System.out.println(ll.deleteAtMiddle(2));
+        // ll.printLL();
     }
 }
