@@ -59,6 +59,24 @@ public class LinkedList {
         tail = temp;
     }
 
+    public void deleteAtMiddleByIndex(int pos) {
+        if (pos == 1) {
+            deleteAtHead();
+            return;
+        } else if (pos == size()) {
+            deleteAtTail();
+            return;
+        }
+
+        Node prev = head;
+        while (pos != 2) {
+            prev = prev.next;
+            pos--;
+        }
+
+        prev.next = prev.next.next;
+    }
+
     public int size() {
         Node temp = head;
         int size = 0;

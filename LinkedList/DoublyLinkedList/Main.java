@@ -21,8 +21,5 @@ public class Main {
         ll.insertAtHead(20);
         ll.insertAtHead(10);
         System.out.println(ll.searchByValue(45));
-        ll.deleteAtMiddleByIndex(3);
-        ll.printLL();
-    
     }
 }
