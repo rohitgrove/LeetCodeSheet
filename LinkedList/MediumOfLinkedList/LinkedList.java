@@ -7,4 +7,14 @@ public class LinkedList {
         }
         System.out.println("Null");
     }
+
+    public static int size(Node head) {
+        int size = 0;
+        Node temp = head;
+        while (temp != null) {
+            size++;
+            temp = temp.next;
+        }
+        return size;
+    }
 }
