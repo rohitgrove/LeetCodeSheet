@@ -1,4 +1,3 @@
-
 public class MaximumProductOfThreeNumbers {
     public static int bruteForce(int nums[]) {
         int maxProd = Integer.MIN_VALUE;
