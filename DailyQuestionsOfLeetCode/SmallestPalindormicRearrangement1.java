@@ -1,4 +1,4 @@
-public class SmallestPalindormicRearrangement {
+public class SmallestPalindormicRearrangement1 {
     public static String smallestPalindrome(String s) {
         int n = s.length(), left = 0;
         int[] freq = new int[26];
