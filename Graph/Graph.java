@@ -13,14 +13,4 @@ public class Graph {
             adjList.get(v).add(u);
         }
     }
-
-    public void printAdj(HashMap<Integer, List<Integer>> adjList) {
-        for (int key : adjList.keySet()) {
-            System.out.print(key + " -> ");
-            for (int nbr : adjList.get(key)) {
-                System.out.print(nbr + ", ");
-            }
-            System.out.println();
-        }
-    }
 }

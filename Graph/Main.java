@@ -12,7 +12,7 @@ public class Main {
         g.addEdge(3, 4, false, adjList);
         g.addEdge(3, 5, false, adjList);
         g.addEdge(4, 5, false, adjList);
-        g.printAdj(adjList);
+        gp.printAdj(adjList);
         gp.bfs(1, 5, adjList);
     }
 }

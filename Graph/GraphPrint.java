@@ -4,6 +4,16 @@ import java.util.List;
 import java.util.Queue;
 
 public class GraphPrint {
+    public void printAdj(HashMap<Integer, List<Integer>> adjList) {
+        for (int key : adjList.keySet()) {
+            System.out.print(key + " -> ");
+            for (int nbr : adjList.get(key)) {
+                System.out.print(nbr + ", ");
+            }
+            System.out.println();
+        }
+    }
+
     private void bfsUtil(int node, HashMap<Integer, Boolean> vis, HashMap<Integer, List<Integer>> adjList) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(node);
