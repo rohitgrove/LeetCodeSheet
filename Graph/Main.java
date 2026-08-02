@@ -14,5 +14,7 @@ public class Main {
         g.addEdge(4, 5, false, adjList);
         gp.printAdj(adjList);
         gp.bfs(1, 5, adjList);
+        System.out.println();
+        gp.dfs(1, 5, adjList);
     }
 }

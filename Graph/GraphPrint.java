@@ -44,4 +44,26 @@ public class GraphPrint {
             }
         }
     }
+
+    private void dfsUtil(int node, HashMap<Integer, Boolean> vis, HashMap<Integer, List<Integer>> adjList) {
+        System.out.print(node + " ");
+        vis.put(node, true);
+
+        if (adjList.containsKey(node)) {
+            for (int nbr : adjList.get(node)) {
+                if (!vis.containsKey(nbr)) {
+                    dfsUtil(nbr, vis, adjList);
+                }
+            }
+        }
+    }
+
+    public void dfs(int start, int end, HashMap<Integer, List<Integer>> adjList) {
+        HashMap<Integer, Boolean> vis = new HashMap<>();
+        for (int node = start; node <= end; node++) {
+            if (!vis.containsKey(node)) {
+                dfsUtil(node, vis, adjList);
+            }
+        }
+    }
 }
