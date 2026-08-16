@@ -1,0 +1,40 @@
+public class MaximumGapBetweenStations {
+    public static int maximumGap(String skill, String station) {
+        int n = skill.length();
+        int[] left = new int[n];
+        int[] right = new int[n];
+        int j = 0;
+
+        for (int i = 0; i < n; i++) {
+            while (station.charAt(j) != skill.charAt(i)) {
+                j++;
+            }
+            left[i] = j;
+            j++;
+        }
+
+        j = station.length() - 1;
+        for (int i = n - 1; i >= 0; i--) {
+            while (station.charAt(j) != skill.charAt(i)) {
+                j--;
+            }
+            right[i] = j;
+            j--;
+        }
+
+        int ans = 0;
+        for (int i = 0; i < n - 1; i++) {
+            if (ans <= right[i + 1] - left[i]) {
+                ans = right[i + 1] - left[i];
+            }
+        }
+
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(maximumGap("aa", "aaaa"));
+        System.out.println(maximumGap("xyz", "xyzz"));
+        System.out.println(maximumGap("cbc", "cbcdbc"));
+    }
+}
