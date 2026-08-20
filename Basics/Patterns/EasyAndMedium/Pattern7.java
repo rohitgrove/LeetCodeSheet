@@ -18,7 +18,7 @@ public class Pattern7 {
                 cnt_st++;
             }
             System.out.println();
-            end_st+=2;
+            end_st += 2;
             end_sp--;
             start_Row++;
         }
