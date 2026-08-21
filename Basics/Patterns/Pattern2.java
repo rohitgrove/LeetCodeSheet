@@ -1,18 +1,18 @@
 public class Pattern2 {
     public static void main(String[] args) {
         int n = 5;
-        int start_Row = 1;
-        int end_Row = n;
+        int row = 1;
+        int tot_st = 1;
 
-        while (start_Row <= end_Row) {
-            int start_Col = 0;
-            int end_Col = start_Row;
-            while (start_Col < end_Col) {
+        while (row <= n) {
+            int cnt_st = 0;
+            while (cnt_st < tot_st) {
                 System.out.print("* ");
-                start_Col++;
+                cnt_st++;
             }
             System.out.println();
-            start_Row++;
+            tot_st++;
+            row++;
         }
     }
 }
