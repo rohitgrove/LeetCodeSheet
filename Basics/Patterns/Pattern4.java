@@ -1,19 +1,27 @@
 public class Pattern4 {
     public static void main(String[] args) {
         int n = 5;
-        int start_Row = 1;
-        int end_Row = n;
+        int row = 1;
+        int total_sp = n - 1;
+        int total_st = 1;
 
-        while (start_Row <= end_Row) {
-            int start_Col = 0;
-            int end_Col = start_Row;
-            int count = start_Row;
-            while (start_Col < end_Col) {
-                System.out.print(count + " ");
-                start_Col++;
+        while (row <= n) {
+            int cnt_sp = 0;
+            while (cnt_sp < total_sp) {
+                System.out.print("  ");
+                cnt_sp++;
             }
+
+            int cnt_st = 0;
+            while (cnt_st < total_st) {
+                System.out.print(" *");
+                cnt_st++;
+            }
+
             System.out.println();
-            start_Row++;
+            total_sp--;
+            total_st++;
+            row++;
         }
     }
 }
