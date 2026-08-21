@@ -1,26 +1,21 @@
 public class Pattern7 {
     public static void main(String[] args) {
         int n = 5;
-        int start_Row = 0;
-        int end_Row = n;
-        int end_sp = n;
-        int end_st = 1;
-        while (start_Row < end_Row) {
-            int cnt_sp = 0;
-            while (cnt_sp < end_sp) {
-                System.out.print("   ");
-                cnt_sp++;
-            }
+        int row = 1;
+        int tot_st = n;
 
-            int cnt_st = 0;
-            while (cnt_st < end_st) {
-                System.out.print(" * ");
+        while (row <= n) {
+            int cnt_st = 1;
+            while (cnt_st <= tot_st) {
+                if (row == 1 || row == n || cnt_st == 1 || cnt_st == tot_st) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
                 cnt_st++;
             }
             System.out.println();
-            end_st += 2;
-            end_sp--;
-            start_Row++;
+            row++;
         }
     }
 }
