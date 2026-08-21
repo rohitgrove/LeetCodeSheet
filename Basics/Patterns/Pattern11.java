@@ -6,13 +6,12 @@ public class Pattern11 {
 		int tots_sp = n - 1;
 
 		while (row <= n) {
-			// space
 			int cnt_sp = 0;
 			while (cnt_sp < tots_sp) {
 				System.out.print("  ");
 				cnt_sp++;
 			}
-			// star!
+
 			int cnt_st = 0;
 			while (cnt_st < tots_st) {
 				if (cnt_st % 2 == 0) {
