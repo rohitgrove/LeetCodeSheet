@@ -1,18 +1,28 @@
 public class Pattern5 {
     public static void main(String[] args) {
         int n = 5;
-        int start_Row = 0;
-        int end_Row = n;
+        int row = 1;
 
-        while (start_Row < end_Row) {
-            int start_Col = 0;
-            int end_col = n - start_Row;
-            while (start_Col < end_col) {
-                System.out.print(" *");
-                start_Col++;
+        int tot_st = n;
+        int tot_sp = 1;
+
+        while (row <= n) {
+            int cnt_sp = 0;
+            while (cnt_sp < tot_sp) {
+                System.out.print("  ");
+                cnt_sp++;
+            }
+
+            int cnt_st = 0;
+            while (cnt_st < tot_st) {
+                System.out.print("* ");
+                cnt_st++;
             }
             System.out.println();
-            start_Row++;
+
+            tot_st--;
+            tot_sp++;
+            row++;
         }
     }
 }
