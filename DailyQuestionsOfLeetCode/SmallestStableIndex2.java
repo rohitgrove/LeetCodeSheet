@@ -2,8 +2,8 @@ public class SmallestStableIndex2 {
     public static int firstStableIndex(int[] nums, int k) {
         int n = nums.length;
 
-        int ansIdx = 0;         // index we're currently testing as the answer
-        int globalMax = Integer.MIN_VALUE;        // biggest number seen anywhere so far
+        int ansIdx = 0; // index we're currently testing as the answer
+        int globalMax = Integer.MIN_VALUE; // biggest number seen anywhere so far
         int ansMax = Integer.MIN_VALUE; // biggest number up to ansIdx
 
         for (int i = 0; i < n; i++) {
@@ -25,9 +25,9 @@ public class SmallestStableIndex2 {
     }
 
     public static void main(String[] args) {
-        int nums1[] = {5,0,1,4};
+        int nums1[] = { 5, 0, 1, 4 };
         System.out.println(firstStableIndex(nums1, 3));
-        int nums2[] = {3,2,1};
+        int nums2[] = { 3, 2, 1 };
         System.out.println(firstStableIndex(nums2, 1));
     }
 }
