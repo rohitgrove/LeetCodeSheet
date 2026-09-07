@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class DistinctSubsequences {
+public class DistinctSubsequences1 {
     public static int solveUsingRecursion(String s, String t, int i, int j) {
         if (j == t.length()) {
             return 1;
