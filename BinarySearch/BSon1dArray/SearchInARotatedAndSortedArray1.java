@@ -1,4 +1,4 @@
-public class SearchInARotatedAndSortedArray {
+public class SearchInARotatedAndSortedArray1 {
     public static int findPivotIdx(int nums[]) {
         int s = 0;
         int e = nums.length - 1;
