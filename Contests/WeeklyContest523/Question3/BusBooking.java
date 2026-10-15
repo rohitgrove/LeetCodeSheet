@@ -12,30 +12,28 @@ public class BusBooking {
     }
 
     public void toggle(String seat) {
-        char ch = seat.charAt(0);
         int row = Integer.parseInt(seat.substring(1));
-        int col = ch - 'A';
+        int col = seat.charAt(0) - 'A';
 
         if (booked[row][col]) {
             totalTime -= cost[row][col];
             booked[row][col] = false;
             cost[row][col] = 0;
             bookedCount--;
-            return;
+        } else {
+            int time = 1;
+
+            if (col == 0 && booked[row][1]) {
+                time = 3;
+            } else if (col == 3 && booked[row][2]) {
+                time = 3;
+            }
+
+            booked[row][col] = true;
+            cost[row][col] = time;
+            totalTime += time;
+            bookedCount++;
         }
-
-        int time = 1;
-
-        if (ch == 'A' && booked[row][1]) {
-            time = 3;
-        } else if (ch == 'D' && booked[row][2]) {
-            time = 3;
-        }
-
-        booked[row][col] = true;
-        cost[row][col] = time;
-        totalTime += time;
-        bookedCount++;
     }
 
     public int getTotalTime() {
