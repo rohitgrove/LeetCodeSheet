@@ -1,7 +1,22 @@
 import java.util.HashMap;
 
 public class LinkedListCycle {
-    public static boolean hasCycle(Node head) {
+    public static boolean slowFastApproach(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean mapApproach(Node head) {
         HashMap<Node, Boolean> table = new HashMap<>();
 
         Node temp = head;
@@ -14,6 +29,10 @@ public class LinkedListCycle {
         }
 
         return false;
+    }
+
+    public static boolean hasCycle(Node head) {
+        return slowFastApproach(head);
     }
 
     public static void main(String[] args) {
